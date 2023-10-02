@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Card > renders 1`] = `
+<DocumentFragment>
+  <div
+    class="_card_db2949"
+  >
+    <figure>
+      <img
+        alt=""
+        src="https://matrix-client.matrix.org/_matrix/media/v3/thumbnail/riot.ovh/PJxWnOsjdnIpkByXMFJVGZgE?width=324&height=324&method=scale"
+      />
+    </figure>
+    <div
+      class="_cardContent_db2949"
+    />
+  </div>
+</DocumentFragment>
+`;
