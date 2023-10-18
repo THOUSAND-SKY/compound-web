@@ -35,9 +35,12 @@ const Template: StoryFn<typeof ShopItemComponent> = (args) => (
         height: "400px",
       }}
     >
-      <div className="">
-        <p>TEST CONTENT</p>
-        <button>yea</button>
+      <div className="cardChildContent">
+        <img src="https://s3.eu-central-1.amazonaws.com/cos-dev-attachments/ShareX/notsimon/1023/bnBeetvybGsHffnI.png"></img>
+      </div>
+      <div className="cardFooter">
+        <img src=""></img>
+        <p>Free</p>
       </div>
     </ShopItemComponent>
     <ShopItemComponent

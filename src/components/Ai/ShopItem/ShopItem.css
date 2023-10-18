@@ -40,6 +40,14 @@ limitations under the License.
   box-sizing: border-box;
 }
 
+.cardChildContent {
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  text-align: center;
+}
+
 .card figure img {
   height: 100%;
   object-fit: cover;
@@ -51,13 +59,21 @@ limitations under the License.
   flex-direction: column;
   position: relative;
   z-index: 1;
-  padding-bottom: 1rem;
+  height: 100%;
   width: 100%;
-  padding: var(--ai-padding-card, 2rem);
   grid-column-start: 1;
   grid-row-start: 1;
   gap: 0.5rem;
   box-sizing: border-box;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 15px; /* Adjust as needed */
+  color: white;
+  font-family: Arial, sans-serif; /* Specify a specific font */
 }
 
 .bgImage {
