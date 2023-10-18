@@ -20,7 +20,7 @@ import { Meta, StoryFn } from "@storybook/react";
 import { ShopItem as ShopItemComponent } from "./ShopItem";
 
 export default {
-  title: "ShopItem",
+  title: "Shop",
   component: ShopItemComponent,
   argTypes: {},
   args: {},
@@ -65,8 +65,8 @@ const Template: StoryFn<typeof ShopItemComponent> = (args) => (
   </div>
 );
 
-export const SimonTest = Template.bind({});
-SimonTest.args = {
+export const deal = Template.bind({});
+deal.args = {
   img: {
     src: "https://s3.eu-central-1.amazonaws.com/cos-dev-attachments/ShareX/notsimon/1023/UBPdpBUxcQWrwkPL.png",
     alt: "alt text",
