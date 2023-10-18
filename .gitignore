@@ -10,3 +10,5 @@ dist
 yarn-error.log
 coverage
 yarn-error.log
+
+.idea
