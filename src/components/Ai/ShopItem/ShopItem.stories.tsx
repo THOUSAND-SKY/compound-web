@@ -27,7 +27,7 @@ export default {
 } as Meta<typeof ShopItemComponent>;
 
 const Template: StoryFn<typeof ShopItemComponent> = (args) => (
-  <div style={{ display: "flex", gap: 8 }}>
+  <div style={{ display: "flex", gap: 10 }}>
     <ShopItemComponent {...args}>
       <div className="">
         <p>TEST CONTENT</p>

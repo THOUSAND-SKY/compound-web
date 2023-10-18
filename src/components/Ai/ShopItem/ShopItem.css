@@ -28,6 +28,18 @@ limitations under the License.
   position: relative;
 }
 
+.card::before {
+  content: "";
+  position: absolute;
+  top: -4px; /* Adjust based on the desired border thickness */
+  left: -4px; /* Adjust based on the desired border thickness */
+  right: -4px; /* Adjust based on the desired border thickness */
+  bottom: -4px; /* Adjust based on the desired border thickness */
+  background: linear-gradient(to bottom, darkblue, lightblue);
+  border-radius: calc(var(--ai-card-radius, 1rem) + 4px); /* Adjust based on the desired border thickness */
+  z-index: -1;
+}
+
 .card figure {
   margin: 0;
   overflow: hidden;

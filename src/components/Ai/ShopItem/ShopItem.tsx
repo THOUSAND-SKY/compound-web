@@ -42,7 +42,6 @@ export const ShopItem = <C extends React.ElementType = "p">({
         <img {...img} />
       </figure>
       <div className={"cardContent"}>{children}</div>
-      <p>yeet</p>
     </Component>
   );
 };
