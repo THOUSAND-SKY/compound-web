@@ -27,8 +27,14 @@ export default {
 } as Meta<typeof ShopItemComponent>;
 
 const Template: StoryFn<typeof ShopItemComponent> = (args) => (
-  <div style={{ display: "flex", gap: 10 }}>
-    <ShopItemComponent {...args}>
+  <div style={{ display: "flex", gap: 8 }}>
+    <ShopItemComponent
+      {...args}
+      style={{
+        width: "350px",
+        height: "400px",
+      }}
+    >
       <div className="">
         <p>TEST CONTENT</p>
         <button>yea</button>
@@ -37,7 +43,8 @@ const Template: StoryFn<typeof ShopItemComponent> = (args) => (
     <ShopItemComponent
       {...args}
       style={{
-        width: "400px",
+        width: "350px",
+        height: "400px",
       }}
     >
       <div className="">
@@ -51,7 +58,7 @@ const Template: StoryFn<typeof ShopItemComponent> = (args) => (
 export const SimonTest = Template.bind({});
 SimonTest.args = {
   img: {
-    src: "https://matrix-client.matrix.org/_matrix/media/v3/thumbnail/riot.ovh/PJxWnOsjdnIpkByXMFJVGZgE?width=324&height=324&method=scale",
+    src: "https://s3.eu-central-1.amazonaws.com/cos-dev-attachments/ShareX/notsimon/1023/UBPdpBUxcQWrwkPL.png",
     alt: "alt text",
   },
 };
