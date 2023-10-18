@@ -36,23 +36,13 @@ const Template: StoryFn<typeof ShopItemComponent> = (args) => (
       }}
     >
       <div className="cardChildContent">
-        <img src="https://s3.eu-central-1.amazonaws.com/cos-dev-attachments/ShareX/notsimon/1023/bnBeetvybGsHffnI.png"></img>
+        <img className="dealImage" src="https://s3.eu-central-1.amazonaws.com/cos-dev-attachments/ShareX/notsimon/1023/bnBeetvybGsHffnI.png"></img>
+        <p className="dealQuantity">1</p>
+        <p className="dealDesc">+0.2 VIP EXP</p>
       </div>
       <div className="cardFooter">
         <img src=""></img>
         <p>Free</p>
-      </div>
-    </ShopItemComponent>
-    <ShopItemComponent
-      {...args}
-      style={{
-        width: "350px",
-        height: "400px",
-      }}
-    >
-      <div className="">
-        <p>max width TEST CONTENT</p>
-        <button>yea</button>
       </div>
     </ShopItemComponent>
   </div>

@@ -72,8 +72,29 @@ limitations under the License.
   justify-content: center;
   align-items: flex-end;
   padding: 15px; /* Adjust as needed */
-  color: white;
+  color: grey;
   font-family: Arial, sans-serif; /* Specify a specific font */
+  font-weight: bold;
+}
+
+.dealImage {
+  margin-top: 20px;
+  /*margin-bottom: 5px;*/
+}
+
+.dealQuantity {
+  margin-top: 40px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0px;
+}
+
+.dealDesc {
+  margin-top: 0px;
+  font-size: 20px;
+  font-weight: bold;
+  color: grey;
 }
 
 .bgImage {
