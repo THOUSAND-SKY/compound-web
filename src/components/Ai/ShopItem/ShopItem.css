@@ -35,7 +35,7 @@ limitations under the License.
   left: -4px; /* Adjust based on the desired border thickness */
   right: -4px; /* Adjust based on the desired border thickness */
   bottom: -4px; /* Adjust based on the desired border thickness */
-  background: linear-gradient(to bottom, darkblue, lightblue);
+  background: linear-gradient(to bottom, #7aaccb, #3f4c62);
   border-radius: calc(var(--ai-card-radius, 1rem) + 4px); /* Adjust based on the desired border thickness */
   z-index: -1;
 }
