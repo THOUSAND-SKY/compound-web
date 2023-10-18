@@ -35,13 +35,13 @@ export const ShopItem = <C extends React.ElementType = "p">({
   ...props
 }: PropsWithChildren<ShopItemProps<C>>) => {
   const Component = as || "div";
-  const classes = classnames("./ShopItem.css/card", className);
+  const classes = classnames("ai_Box", "card", className);
   return (
-    <Component {...props} className={classnames("ai_Box", classes)}>
+    <Component {...props} className={classes}>
       <figure>
         <img {...img} />
       </figure>
-      <div className={"./ShopItem.css/cardContent"}>{children}</div>
+      <div className={"cardContent"}>{children}</div>
       <p>yeet</p>
     </Component>
   );
