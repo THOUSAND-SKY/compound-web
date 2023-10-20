@@ -29,19 +29,26 @@ type ShopItemProps<C extends React.ElementType> = {
 
 export const ShopItem = <C extends React.ElementType = "p">({
   as,
-  children,
   className,
-  img,
   ...props
 }: PropsWithChildren<ShopItemProps<C>>) => {
   const Component = as || "div";
   const classes = classnames("ai_Box", "card", className);
   return (
     <Component {...props} className={classes}>
-      <figure>
-        <img {...img} />
-      </figure>
-      <div className={"cardContent"}>{children}</div>
+      <div className={"cardBorder"}>
+        <div className={"cardContent"}>
+          <div className={"cardChildContent"}>
+            <img className={"dealImage"} src="https://s3.eu-central-1.amazonaws.com/cos-dev-attachments/ShareX/notsimon/1023/bnBeetvybGsHffnI.png"></img>
+            <p className={"dealQuantity"}>1</p>
+            <p className={"dealDesc"}>+0.2 VIP EXP</p>
+          </div>
+          <div className={"cardFooter"}>
+            <img src=""></img>
+            <p>Free</p>
+          </div>
+        </div>
+      </div>
     </Component>
   );
 };
