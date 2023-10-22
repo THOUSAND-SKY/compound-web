@@ -17,38 +17,38 @@ limitations under the License.
 import classnames from "classnames";
 import React, { PropsWithChildren } from "react";
 import "./ShopItem.css";
+import { Card } from "../Card/Card";
 
 type ShopItemProps<C extends React.ElementType> = {
   as?: C;
   className?: string;
-  img: {
-    src: string;
-    alt: string;
-  };
+  borderColor?: string;
 } & React.ComponentPropsWithoutRef<C>;
 
 export const ShopItem = <C extends React.ElementType = "p">({
   as,
   className,
+  borderColor,
   ...props
 }: PropsWithChildren<ShopItemProps<C>>) => {
   const Component = as || "div";
-  const classes = classnames("ai_Box", "card", className);
+  const classes = classnames("ai_Box", className);
   return (
     <Component {...props} className={classes}>
-      <div className={"cardBorder"}>
-        <div className={"cardContent"}>
-          <div className={"cardChildContent"}>
-            <img className={"dealImage"} src="https://s3.eu-central-1.amazonaws.com/cos-dev-attachments/ShareX/notsimon/1023/bnBeetvybGsHffnI.png"></img>
-            <p className={"dealQuantity"}>1</p>
-            <p className={"dealDesc"}>+0.2 VIP EXP</p>
-          </div>
-          <div className={"cardFooter"}>
-            <img src=""></img>
-            <p>Free</p>
-          </div>
+      <Card borderColor={borderColor}>
+        <div className={"card-child-content"}>
+          <img
+            className={"deal-image"}
+            src="https://s3.eu-central-1.amazonaws.com/cos-dev-attachments/ShareX/notsimon/1023/bnBeetvybGsHffnI.png"
+          ></img>
+          <p className={"deal-quantity"}>1</p>
+          <p className={"deal-desc"}>+0.2 VIP EXP</p>
         </div>
-      </div>
+        <div className={"card-footer"}>
+          <img src=""></img>
+          <p>Free</p>
+        </div>
+      </Card>
     </Component>
   );
 };

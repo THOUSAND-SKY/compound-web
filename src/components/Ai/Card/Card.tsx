@@ -15,33 +15,40 @@ limitations under the License.
 */
 
 import classnames from "classnames";
-import React, { PropsWithChildren } from "react";
-import styles from "./Card.module.css";
+import "./Card.css";
+import React, { PropsWithChildren, useEffect, useRef } from "react";
 
 type CardProps<C extends React.ElementType> = {
   as?: C;
   className?: string;
-  img: {
-    src: string;
-    alt: string;
-  };
+  borderColor?: string;
 } & React.ComponentPropsWithoutRef<C>;
 
 export const Card = <C extends React.ElementType = "p">({
   as,
-  children,
   className,
-  img,
+  children,
+  borderColor, // add borderColor prop
   ...props
-}: PropsWithChildren<CardProps<C>>) => {
+}: PropsWithChildren<CardProps<C> & { borderColor?: string }>) => {
+  // add borderColor to the type
   const Component = as || "div";
-  const classes = classnames(styles.card, className);
+  const classes = classnames("ai_Box", "card-border", "card", className);
+
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (ref.current && borderColor) {
+      (ref.current as HTMLElement).style.setProperty(
+        "--card-border-color",
+        borderColor,
+      );
+    }
+  }, [borderColor]);
+
   return (
-    <Component {...props} className={classes}>
-      <figure>
-        <img {...img} />
-      </figure>
-      <div className={styles.cardContent}>{children}</div>
+    <Component {...props} className={classes} ref={ref}>
+      <div className={"card-content"}>{children}</div>
     </Component>
   );
 };

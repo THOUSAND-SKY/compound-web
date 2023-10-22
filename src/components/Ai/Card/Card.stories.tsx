@@ -28,30 +28,18 @@ export default {
 
 const Template: StoryFn<typeof CardComponent> = (args) => (
   <div style={{ display: "flex", gap: 8 }}>
-    <CardComponent {...args}>
-      <div className="">
-        <p>TEST CONTENT</p>
-        <button>yea</button>
-      </div>
-    </CardComponent>
-    <CardComponent
-      {...args}
-      style={{
-        width: "400px",
-      }}
-    >
-      <div className="">
-        <p>max width TEST CONTENT</p>
-        <button>yea</button>
-      </div>
-    </CardComponent>
+    <CardComponent {...args}></CardComponent>
+
+    <CardComponent {...args}></CardComponent>
   </div>
 );
 
-export const Round = Template.bind({});
-Round.args = {
-  img: {
-    src: "https://matrix-client.matrix.org/_matrix/media/v3/thumbnail/riot.ovh/PJxWnOsjdnIpkByXMFJVGZgE?width=324&height=324&method=scale",
-    alt: "alt text",
+export const CardYeet = Template.bind({});
+CardYeet.args = {
+  style: {
+    width: "350px",
+    height: "400px",
   },
+  borderColor:
+    "linear-gradient(to bottom, rgb(0 212 255 / 100%) 0%, rgb(9 9 121 / 100%) 33%, rgb(5 96 179 / 100%) 63%, rgb(2 0 36 / 100%) 100%)",
 };

@@ -28,29 +28,18 @@ export default {
 
 const Template: StoryFn<typeof ShopItemComponent> = (args) => (
   <div style={{ display: "flex", gap: 8 }}>
-    <ShopItemComponent
-      {...args}
-      style={{
-        width: "350px",
-        height: "400px",
-      }}
-    >
-    </ShopItemComponent>
-    <ShopItemComponent
-      {...args}
-      style={{
-        width: "350px",
-        height: "400px",
-      }}
-    >
-    </ShopItemComponent>
+    <ShopItemComponent {...args}></ShopItemComponent>
+
+    <ShopItemComponent {...args}></ShopItemComponent>
   </div>
 );
 
-export const deal = Template.bind({});
-deal.args = {
-  img: {
-    src: "https://s3.eu-central-1.amazonaws.com/cos-dev-attachments/ShareX/notsimon/1023/UBPdpBUxcQWrwkPL.png",
-    alt: "alt text",
+export const CryptonDeal = Template.bind({});
+CryptonDeal.args = {
+  style: {
+    width: "350px",
+    height: "400px",
   },
+  borderColor:
+    "linear-gradient(to bottom, rgb(0 212 255 / 100%) 0%, rgb(9 9 121 / 100%) 33%, rgb(5 96 179 / 100%) 63%, rgb(2 0 36 / 100%) 100%)",
 };

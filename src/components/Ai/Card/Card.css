@@ -14,50 +14,43 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+:root {
+  --ai-card-radius: 2rem;
+  --card-border-color: linear-gradient(to bottom, rgb(0 212 255 / 100%) 0%, rgb(9 9 121 / 100%) 33%, rgb(5 96 179 / 100%) 63%, rgb(2 0 36 / 100%) 100%);
+}
+
+.ai-box, .ai-box *,
+.ai-box *::after,
+.ai-box *::before {
+  box-sizing: border-box;
+
+}
+
 .card {
-  border-radius: var(--ai-card-radius, 1rem);
   display: grid;
   box-sizing: border-box;
   position: relative;
 }
 
-.card figure {
+.card-border {
+  padding: 5px;
+  border-radius: var(--ai-card-radius, 2rem);
+  background: var(--card-border-color, linear-gradient(to bottom, rgb(0 212 255 / 100%) 0%, rgb(9 9 121 / 100%) 33%, rgb(5 96 179 / 100%) 63%, rgb(2 0 36 / 100%) 100%));;
+}
+
+.card-content {
   margin: 0;
-  overflow: hidden;
-  border-radius: inherit;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  grid-column-start: 1;
-  grid-row-start: 1;
-  box-sizing: border-box;
-}
-
-.card figure img {
-  height: 100%;
-  object-fit: cover;
-}
-
-.cardContent {
   display: flex;
   align-self: flex-end;
   flex-direction: column;
   position: relative;
   z-index: 1;
-  padding-bottom: 1rem;
-  width: 100%;
-  padding: var(--ai-padding-card, 2rem);
+  border-radius: calc(var(--ai-card-radius, 2rem)*0.9);
+  block-size: 100%;
+  inline-size: 100%;
+  background: #222;
   grid-column-start: 1;
   grid-row-start: 1;
   gap: 0.5rem;
   box-sizing: border-box;
-}
-
-.bgImage {
-  object-fit: cover;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
 }
