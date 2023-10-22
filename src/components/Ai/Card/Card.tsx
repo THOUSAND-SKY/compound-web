@@ -28,9 +28,12 @@ export const Card = <C extends React.ElementType = "p">({
   as,
   className,
   children,
-  borderColor, // add borderColor prop
+  borderColor,
+  backgroundColor,
   ...props
-}: PropsWithChildren<CardProps<C> & { borderColor?: string }>) => {
+}: PropsWithChildren<
+  CardProps<C> & { borderColor?: string; backgroundColor?: string }
+>) => {
   // add borderColor to the type
   const Component = as || "div";
   const classes = classnames("ai_Box", "card-border", "card", className);
@@ -44,7 +47,13 @@ export const Card = <C extends React.ElementType = "p">({
         borderColor,
       );
     }
-  }, [borderColor]);
+    if (ref.current && backgroundColor) {
+      (ref.current as HTMLElement).style.setProperty(
+        "--card-background-color",
+        backgroundColor,
+      );
+    }
+  }, [borderColor, backgroundColor]);
 
   return (
     <Component {...props} className={classes} ref={ref}>

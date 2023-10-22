@@ -42,4 +42,6 @@ CardYeet.args = {
   },
   borderColor:
     "linear-gradient(to bottom, rgb(0 212 255 / 100%) 0%, rgb(9 9 121 / 100%) 33%, rgb(5 96 179 / 100%) 63%, rgb(2 0 36 / 100%) 100%)",
+  backgroundColor:
+    "linear-gradient(to bottom, rgb(34 38 47) 0%, rgb(57 60 68) 100%)",
 };
