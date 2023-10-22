@@ -1,20 +1,20 @@
 import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 
-import { ShopItem as ShopItemComponent } from "./ShopItem";
+import { ShopDealCard as ShopDealCardComponent } from "./ShopDealCard";
 
 export default {
-  title: "Shop",
-  component: ShopItemComponent,
+  title: "ShopDealCards",
+  component: ShopDealCardComponent,
   argTypes: {},
   args: {},
-} as Meta<typeof ShopItemComponent>;
+} as Meta<typeof ShopDealCardComponent>;
 
-const Template: StoryFn<typeof ShopItemComponent> = (args) => (
+const Template: StoryFn<typeof ShopDealCardComponent> = (args) => (
   <div style={{ display: "flex", gap: 8 }}>
-    <ShopItemComponent {...args}></ShopItemComponent>
+    <ShopDealCardComponent {...args}></ShopDealCardComponent>
 
-    <ShopItemComponent {...args}></ShopItemComponent>
+    <ShopDealCardComponent {...args}></ShopDealCardComponent>
   </div>
 );
 

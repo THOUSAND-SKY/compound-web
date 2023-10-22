@@ -1,6 +1,6 @@
 import classnames from "classnames";
 import React, { PropsWithChildren } from "react";
-import "./ShopItem.css";
+import "./ShopSubCard.css";
 import { Card } from "../Card/Card";
 
 type ShopItemProps<C extends React.ElementType> = {
@@ -10,7 +10,7 @@ type ShopItemProps<C extends React.ElementType> = {
   backgroundColor?: string;
 } & React.ComponentPropsWithoutRef<C>;
 
-export const ShopItem = <C extends React.ElementType = "p">({
+export const ShopSubCard = <C extends React.ElementType = "p">({
   as,
   className,
   borderColor,
@@ -24,15 +24,13 @@ export const ShopItem = <C extends React.ElementType = "p">({
       <Card borderColor={borderColor} backgroundColor={backgroundColor}>
         <div className={"card-child-content"}>
           <img
-            className={"deal-image"}
+            className={"sub-image"}
             src="https://s3.eu-central-1.amazonaws.com/cos-dev-attachments/ShareX/notsimon/1023/bnBeetvybGsHffnI.png"
           ></img>
-          <p className={"deal-quantity"}>1</p>
-          <p className={"deal-desc"}>+0.2 VIP EXP</p>
-        </div>
-        <div className={"card-footer"}>
-          <img src=""></img>
-          <p>Free</p>
+          <p className={"deal-quantity"}>SENTIENT AI</p>
+          <p className={"deal-desc"}>
+            Choose your own sentient AI&apos;s and more!
+          </p>
         </div>
       </Card>
     </Component>
