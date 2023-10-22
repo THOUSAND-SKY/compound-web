@@ -29,6 +29,7 @@ limitations under the License.
 .card-footer {
   display: flex;
   justify-content: center;
+  background: #181e2a;
   align-items: flex-end;
   padding: 15px; /* Adjust as needed */
   color: grey;

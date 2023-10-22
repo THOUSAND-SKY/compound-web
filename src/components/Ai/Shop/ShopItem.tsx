@@ -23,19 +23,21 @@ type ShopItemProps<C extends React.ElementType> = {
   as?: C;
   className?: string;
   borderColor?: string;
+  backgroundColor?: string;
 } & React.ComponentPropsWithoutRef<C>;
 
 export const ShopItem = <C extends React.ElementType = "p">({
   as,
   className,
   borderColor,
+  backgroundColor,
   ...props
 }: PropsWithChildren<ShopItemProps<C>>) => {
   const Component = as || "div";
   const classes = classnames("ai_Box", className);
   return (
     <Component {...props} className={classes}>
-      <Card borderColor={borderColor}>
+      <Card borderColor={borderColor} backgroundColor={backgroundColor}>
         <div className={"card-child-content"}>
           <img
             className={"deal-image"}

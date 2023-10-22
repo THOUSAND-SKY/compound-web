@@ -40,7 +40,6 @@ CardYeet.args = {
     width: "350px",
     height: "400px",
   },
-  borderColor:
-    "linear-gradient(to bottom, #7aabca 0%, #3d588c 33%, #4a7693 66%, #3f4b62 100%)",
-  backgroundColor: "linear-gradient(to bottom, #22262f 0%, #424f69 100%)",
+  borderColor: "",
+  backgroundColor: "",
 };
