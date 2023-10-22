@@ -16,8 +16,8 @@ limitations under the License.
 
 :root {
   --ai-card-radius: 2rem;
-  --card-border-color: linear-gradient(to bottom, rgb(0 212 255 / 100%) 0%, rgb(9 9 121 / 100%) 33%, rgb(5 96 179 / 100%) 63%, rgb(2 0 36 / 100%) 100%);
-  --card-background-color: linear-gradient(to bottom, rgb(34 38 47) 0%, rgb(57 60 68) 100%);
+  --card-border-color: linear-gradient(to bottom, #7aabca 0%, #3d588c 33%, #4a7693 66%, #3f4b62 100%);
+  --card-background-color: linear-gradient(to bottom, #22262f 0%, #424f69 100%);
 }
 
 .ai-box, .ai-box *,
@@ -34,9 +34,9 @@ limitations under the License.
 }
 
 .card-border {
-  padding: 5px;
+  padding: 3px;
   border-radius: var(--ai-card-radius, 2rem);
-  background: var(--card-border-color, linear-gradient(to bottom, rgb(0 212 255 / 100%) 0%, rgb(9 9 121 / 100%) 33%, rgb(5 96 179 / 100%) 63%, rgb(2 0 36 / 100%) 100%));;
+  background: var(--card-border-color);;
 }
 
 .card-content {
@@ -49,7 +49,7 @@ limitations under the License.
   border-radius: calc(var(--ai-card-radius, 2rem)*0.9);
   block-size: 100%;
   inline-size: 100%;
-  background: var(--card-background-color, linear-gradient(to bottom, rgb(34 38 47) 0%, rgb(57 60 68) 100%));
+  background: var(--card-background-color);
   grid-column-start: 1;
   grid-row-start: 1;
   gap: 0.5rem;
