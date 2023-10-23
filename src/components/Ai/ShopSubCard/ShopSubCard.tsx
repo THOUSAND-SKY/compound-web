@@ -40,6 +40,7 @@ export const ShopSubCard = <C extends React.ElementType = "p">({
               minBlockSize: 0,
               fontSize: 14,
               backgroundColor: "rgba(59, 95, 121, 1)",
+              marginBottom: 5,
             }}
           >
             VIEW BENEFITS

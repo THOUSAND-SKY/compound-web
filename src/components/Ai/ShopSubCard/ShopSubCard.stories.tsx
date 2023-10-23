@@ -24,7 +24,6 @@ ShopSubCardPlus.args = {
     width: "350px",
     height: "400px",
   },
-  borderColor:
-    "linear-gradient(to bottom, #7aabca 0%, #3d588c 33%, #4a7693 66%, #3f4b62 100%)",
-  backgroundColor: "linear-gradient(to bottom, #22262f 0%, #293449 100%)",
+  borderColor: "#4364a9",
+  backgroundColor: "linear-gradient(to bottom, #111a30 0%, #194260 100%)",
 };
