@@ -22,8 +22,6 @@ export const ShopSubCardPlus = Template.bind({});
 ShopSubCardPlus.args = {
   style: {
     width: "350px",
-    height: "400px",
+    height: "200px",
   },
-  borderColor: "#4364a9",
-  backgroundColor: "linear-gradient(to bottom, #111a30 0%, #194260 100%)",
 };

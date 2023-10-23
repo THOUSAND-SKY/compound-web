@@ -13,15 +13,18 @@ type ShopItemProps<C extends React.ElementType> = {
 export const ShopDealCard = <C extends React.ElementType = "p">({
   as,
   className,
-  borderColor,
-  backgroundColor,
   ...props
 }: PropsWithChildren<ShopItemProps<C>>) => {
   const Component = as || "div";
   const classes = classnames("ai_Box", className);
   return (
     <Component {...props} className={classes}>
-      <Card borderColor={borderColor} backgroundColor={backgroundColor}>
+      <Card
+        borderColor={
+          "linear-gradient(to bottom, #7aabca 0%, #3d588c 33%, #4a7693 66%, #3f4b62 100%);"
+        }
+        backgroundColor={"linear-gradient(to bottom, #22262f 0%, #293449 100%)"}
+      >
         <div className={"card-child-content"}>
           <img
             className={"deal-image"}
