@@ -7,13 +7,15 @@ import { Button } from "../../Button/Button";
 type ShopItemProps<C extends React.ElementType> = {
   as?: C;
   className?: string;
-  borderColor?: string;
-  backgroundColor?: string;
+  tagColor?: string;
+  tagText?: string;
 } & React.ComponentPropsWithoutRef<C>;
 
 export const ShopSubCard = <C extends React.ElementType = "p">({
   as,
   className,
+  tagColor,
+  tagText,
   ...props
 }: PropsWithChildren<ShopItemProps<C>>) => {
   const Component = as || "div";
@@ -29,7 +31,19 @@ export const ShopSubCard = <C extends React.ElementType = "p">({
           src="https://s3.eu-central-1.amazonaws.com/cos-dev-attachments/ShareX/notsimon/1023/yYNOFJkjAoNBbPuq.png"
         ></img>
         <div className={"card-child-content"}>
-          <p className={"sub-title"}>SENTIENT AI</p>
+          <span
+            style={{
+              display: "flex",
+              margin: "auto auto",
+              textAlign: "center",
+            }}
+          >
+            <p className={"sub-title"}>SENTIENT AI</p>
+            <div className={"tag"} style={{ background: tagColor }}>
+              {tagText}
+            </div>
+          </span>
+
           <p className={"sub-desc"}>
             Choose your own sentient AI&apos;s and more!
           </p>

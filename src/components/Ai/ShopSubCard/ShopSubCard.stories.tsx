@@ -12,9 +12,17 @@ export default {
 
 const Template: StoryFn<typeof ShopSubCardComponent> = (args) => (
   <div style={{ display: "flex", gap: 8 }}>
-    <ShopSubCardComponent {...args}></ShopSubCardComponent>
+    <ShopSubCardComponent
+      tagColor={"linear-gradient(#e6d225, #c89b24)"}
+      tagText={"Plus +"}
+      {...args}
+    ></ShopSubCardComponent>
 
-    <ShopSubCardComponent {...args}></ShopSubCardComponent>
+    <ShopSubCardComponent
+      tagColor={"linear-gradient(#5c24c0, #2e61e0)"}
+      tagText={"Unlimited"}
+      {...args}
+    ></ShopSubCardComponent>
   </div>
 );
 
