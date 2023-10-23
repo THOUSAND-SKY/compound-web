@@ -25,7 +25,7 @@ export const ShopSubCard = <C extends React.ElementType = "p">({
         <div className={"card-child-content"}>
           <img
             className={"sub-image"}
-            src="https://s3.eu-central-1.amazonaws.com/cos-dev-attachments/ShareX/notsimon/1023/bnBeetvybGsHffnI.png"
+            src="https://s3.eu-central-1.amazonaws.com/cos-dev-attachments/ShareX/notsimon/1023/yYNOFJkjAoNBbPuq.png"
           ></img>
           <p className={"deal-quantity"}>SENTIENT AI</p>
           <p className={"deal-desc"}>
