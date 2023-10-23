@@ -2,6 +2,7 @@ import classnames from "classnames";
 import React, { PropsWithChildren } from "react";
 import "./ShopSubCard.css";
 import { Card } from "../Card/Card";
+import { Button } from "../../Button/Button";
 
 type ShopItemProps<C extends React.ElementType> = {
   as?: C;
@@ -22,15 +23,27 @@ export const ShopSubCard = <C extends React.ElementType = "p">({
   return (
     <Component {...props} className={classes}>
       <Card borderColor={borderColor} backgroundColor={backgroundColor}>
+        <img
+          className={"sub-image"}
+          src="https://s3.eu-central-1.amazonaws.com/cos-dev-attachments/ShareX/notsimon/1023/yYNOFJkjAoNBbPuq.png"
+        ></img>
         <div className={"card-child-content"}>
-          <img
-            className={"sub-image"}
-            src="https://s3.eu-central-1.amazonaws.com/cos-dev-attachments/ShareX/notsimon/1023/yYNOFJkjAoNBbPuq.png"
-          ></img>
-          <p className={"deal-quantity"}>SENTIENT AI</p>
-          <p className={"deal-desc"}>
+          <p className={"sub-title"}>SENTIENT AI</p>
+          <p className={"sub-desc"}>
             Choose your own sentient AI&apos;s and more!
           </p>
+          <Button
+            style={{
+              width: 250,
+              height: 30,
+              margin: "auto",
+              minBlockSize: 0,
+              fontSize: 14,
+              backgroundColor: "rgba(59, 95, 121, 1)",
+            }}
+          >
+            VIEW BENEFITS
+          </Button>
         </div>
       </Card>
     </Component>

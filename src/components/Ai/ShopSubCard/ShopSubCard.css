@@ -1,9 +1,9 @@
 .card-child-content {
   padding: 10px;
-  margin-inline: auto;
-  block-size: 100%;
   text-align: center;
   z-index: 1;
+  align-content: end;
+  display: grid
 }
 
 .card figure img {
@@ -13,34 +13,35 @@
 
 .sub-image {
   margin-block-start: 20px;
-  block-size: 80px;
+  block-size: 100px;
   opacity: 0.5;
   z-index: -1;
   position: absolute;
-  left: 50%;
-  top: 20%;
+  inset-inline-start: 50%;
+  inset-block-start: 20%;
   transform: translate(-50%, -50%);
 }
 
-.deal-quantity {
-  margin-block: 40px 0;
-  font-size: 40px;
+.sub-title {
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
   font-weight: bold;
   color: white;
 }
 
-.deal-desc {
-  margin-block-start: 0;
-  font-size: 20px;
+.sub-desc {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5px;
+  font-size: 15px;
   font-weight: bold;
   color: grey;
 }
 
-.bg-image {
-  object-fit: cover;
-  position: absolute;
-  inline-size: 100%;
-  block-size: 100%;
-  inset-inline-start: 0;
-  inset-block-start: 0;
+@media (hover) {
+  button:hover {
+    border-color: rgba(59, 95, 121, 0.5) !important;
+    background: rgba(59, 95, 121, 0.5) !important;
+  }
 }
