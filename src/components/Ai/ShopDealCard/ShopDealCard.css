@@ -24,6 +24,7 @@
 .deal-image {
   margin-block-start: 20px;
   block-size: 80px;
+  margin: auto;
 }
 
 .deal-quantity {
