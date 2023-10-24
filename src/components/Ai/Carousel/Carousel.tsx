@@ -46,6 +46,8 @@ export const Carousel: React.FC = () => {
     };
   }, []);
 
+  const dealSwitchSeconds = 7;
+
   const setupTimer = () => {
     // Define the setupTimer function
     if (timerRef.current) {
@@ -54,7 +56,7 @@ export const Carousel: React.FC = () => {
 
     timerRef.current = setInterval(() => {
       dispatch({ type: "next", length: Object.keys(Product).length });
-    }, 3000);
+    }, dealSwitchSeconds * 1000);
   };
 
   // Handle touch events for swipe functionality
