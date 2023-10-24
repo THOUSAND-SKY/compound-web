@@ -32,6 +32,16 @@ export const Carousel: React.FC = () => {
   useEffect(() => {
     dispatch({ type: "done" });
   }, [state.desired]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      dispatch({ type: "next", length: Object.keys(Product).length });
+    }, 3000);
+
+    // Clear the timer when the component is unmounted
+    return () => clearInterval(timer);
+  }, []);
+
   // Handle touch events for swipe functionality
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
