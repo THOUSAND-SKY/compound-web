@@ -1,5 +1,5 @@
 import "./Carousel.css";
-import React, { useReducer, useEffect, useState } from "react";
+import React, { useReducer, useEffect, useState, useRef } from "react";
 import { ShopSubCard, Product } from "../ShopSubCard/ShopSubCard";
 
 function next(length: number, active: number) {
@@ -28,19 +28,34 @@ export const Carousel: React.FC = () => {
   };
 
   const [state, dispatch] = useReducer(carouselReducer, initialState);
+  const timerRef = useRef<NodeJS.Timeout | null>(null); // Add a ref for the timer
 
   useEffect(() => {
     dispatch({ type: "done" });
+    setupTimer(); // Call the setupTimer function
   }, [state.desired]);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      dispatch({ type: "next", length: Object.keys(Product).length });
-    }, 3000);
+    setupTimer(); // Call the setupTimer function
 
     // Clear the timer when the component is unmounted
-    return () => clearInterval(timer);
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+      }
+    };
   }, []);
+
+  const setupTimer = () => {
+    // Define the setupTimer function
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+    }
+
+    timerRef.current = setInterval(() => {
+      dispatch({ type: "next", length: Object.keys(Product).length });
+    }, 3000);
+  };
 
   // Handle touch events for swipe functionality
   const [touchStart, setTouchStart] = useState(0);
@@ -55,6 +70,7 @@ export const Carousel: React.FC = () => {
   };
 
   const handleTouchEnd = () => {
+    setupTimer(); // Call the setupTimer function
     if (touchEnd < touchStart) {
       dispatch({ type: "next", length: Object.keys(Product).length });
     }
@@ -88,7 +104,13 @@ export const Carousel: React.FC = () => {
           <div
             key={index}
             className={`dot ${state.active === index ? "active" : ""}`}
-            onClick={() => dispatch({ type: "jump", desired: index })}
+            onClick={() => {
+              if (timerRef.current) {
+                clearInterval(timerRef.current);
+              }
+              setupTimer(); // Call the setupTimer function
+              dispatch({ type: "jump", desired: index });
+            }}
           ></div>
         ))}
       </div>
