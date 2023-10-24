@@ -1,7 +1,8 @@
 .indicators {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top:250px;
+    z-index: 4;
 }
 
 .dot {
@@ -17,16 +18,22 @@
     background-color: #717171;
 }
 
-img {
+.inactive {
+    visibility: hidden;
+    position: absolute;
+}
+
+.carouselComponent {
+    position: absolute;
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-.slide-in {
-    opacity: 0;
-    transform: translateX(-100%);
+.carouselComponent.active {
+    opacity: 1;
+    transform: translateX(0);
 }
 
-.slide-out {
+.carouselComponent.inactive {
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(-100%);
 }

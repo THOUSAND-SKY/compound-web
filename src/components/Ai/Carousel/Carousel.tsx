@@ -1,5 +1,6 @@
 import "./Carousel.css";
 import React, { useReducer, useEffect, useState } from "react";
+import { ShopSubCard, Product } from "../ShopSubCard/ShopSubCard";
 
 function next(length: number, active: number) {
   return (active + 1) % length;
@@ -23,10 +24,12 @@ type CarouselAction =
   | { type: "drag"; offset: number };
 
 export const Carousel: React.FC = () => {
-  const images = [
-    "https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&dpr=1",
-    "https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&dpr=1",
-  ];
+  // const images = [
+  //   "https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&dpr=1",
+  //   "https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&dpr=1",
+  // ];
+
+  const components = [ShopSubCard, ShopSubCard];
 
   const initialState: CarouselState = {
     active: 0,
@@ -53,11 +56,11 @@ export const Carousel: React.FC = () => {
 
   const handleTouchEnd = () => {
     if (touchEnd < touchStart) {
-      dispatch({ type: "next", length: images.length });
+      dispatch({ type: "next", length: components.length });
     }
 
     if (touchEnd > touchStart) {
-      dispatch({ type: "prev", length: images.length });
+      dispatch({ type: "prev", length: components.length });
     }
 
     // Reset touch positions
@@ -67,20 +70,28 @@ export const Carousel: React.FC = () => {
 
   return (
     <div>
-      <img
-        src={images[state.active]}
-        alt=""
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      />
-      {images.map((_, index) => (
+      {Object.values(Product).map((product, index) => (
         <div
           key={index}
-          className={`dot ${state.active === index ? "active" : ""}`}
-          onClick={() => dispatch({ type: "jump", desired: index })}
-        ></div>
+          className={`carouselComponent ${
+            state.active === index ? "active" : "inactive"
+          }`}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          <ShopSubCard product={product} />
+        </div>
       ))}
+      <div className="indicators">
+        {Object.values(Product).map((_, index) => (
+          <div
+            key={index}
+            className={`dot ${state.active === index ? "active" : ""}`}
+            onClick={() => dispatch({ type: "jump", desired: index })}
+          ></div>
+        ))}
+      </div>
     </div>
   );
 };
