@@ -1,5 +1,3 @@
-
-
 .card-child-content {
   padding: 10px;
   text-align: center;
@@ -39,13 +37,6 @@
   font-size: 15px;
   font-weight: bold;
   color: grey;
-}
-
-@media (hover) {
-  button:hover {
-    border-color: rgba(59, 95, 121, 0.5) !important;
-    background: rgba(59, 95, 121, 0.5) !important;
-  }
 }
 
 .tag {
