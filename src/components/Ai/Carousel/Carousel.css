@@ -30,10 +30,10 @@
 
 .carouselComponent.active {
     opacity: 1;
-    transform: translateX(0);
+    /*transform: translateX(0);*/
 }
 
 .carouselComponent.inactive {
     opacity: 0;
-    transform: translateX(-100%);
+    /*transform: translateX(-100%);*/
 }
