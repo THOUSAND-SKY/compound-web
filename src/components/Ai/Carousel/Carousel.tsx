@@ -13,28 +13,18 @@ function previous(length: number, active: number) {
 type CarouselState = {
   active: number;
   desired: number;
-  offset: number;
 };
 
 type CarouselAction =
   | { type: "jump"; desired: number }
   | { type: "next"; length: number }
   | { type: "prev"; length: number }
-  | { type: "done" }
-  | { type: "drag"; offset: number };
+  | { type: "done" };
 
 export const Carousel: React.FC = () => {
-  // const images = [
-  //   "https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&dpr=1",
-  //   "https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&dpr=1",
-  // ];
-
-  const components = [ShopSubCard, ShopSubCard];
-
   const initialState: CarouselState = {
     active: 0,
     desired: 0,
-    offset: 0,
   };
 
   const [state, dispatch] = useReducer(carouselReducer, initialState);
@@ -56,11 +46,11 @@ export const Carousel: React.FC = () => {
 
   const handleTouchEnd = () => {
     if (touchEnd < touchStart) {
-      dispatch({ type: "next", length: components.length });
+      dispatch({ type: "next", length: Object.keys(Product).length });
     }
 
     if (touchEnd > touchStart) {
-      dispatch({ type: "prev", length: components.length });
+      dispatch({ type: "prev", length: Object.keys(Product).length });
     }
 
     // Reset touch positions
@@ -116,13 +106,7 @@ function carouselReducer(state: CarouselState, action: CarouselAction) {
     case "done":
       return {
         ...state,
-        offset: NaN,
         active: state.desired,
-      };
-    case "drag":
-      return {
-        ...state,
-        offset: action.offset,
       };
     default:
       return state;
