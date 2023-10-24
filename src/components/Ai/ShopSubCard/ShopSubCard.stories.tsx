@@ -24,8 +24,8 @@ const Template: StoryFn<typeof ShopSubCardComponent> = (args) => (
   </div>
 );
 
-export const ShopSubCardPlus = Template.bind({});
-ShopSubCardPlus.args = {
+export const ShopSubDesktop = Template.bind({});
+ShopSubDesktop.args = {
   style: {
     width: "350px",
     height: "200px",
