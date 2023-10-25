@@ -46,7 +46,7 @@ export const Carousel: React.FC = () => {
     };
   }, []);
 
-  const dealSwitchSeconds = 7;
+  const dealSwitchSeconds = 6;
 
   const setupTimer = () => {
     // Define the setupTimer function
@@ -98,7 +98,7 @@ export const Carousel: React.FC = () => {
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          <ShopSubCard product={product} />
+          <ShopSubCard isMobile={true} product={product} />
         </div>
       ))}
       <div className="indicators">

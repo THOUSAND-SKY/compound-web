@@ -13,6 +13,7 @@ type ShopItemProps<C extends React.ElementType> = {
   as?: C;
   className?: string;
   product: Product;
+  isMobile: boolean;
 } & React.ComponentPropsWithoutRef<C>;
 
 type ProductType = {
@@ -53,10 +54,11 @@ export const ShopSubCard = <C extends React.ElementType = "p">({
   as,
   className,
   product,
+  isMobile,
   ...props
 }: PropsWithChildren<ShopItemProps<C>>) => {
   const Component = as || "div";
-  const classes = classnames("ai_Box", className);
+  const classes = classnames(className);
   const [isHovered, setIsHovered] = useState(false);
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -70,7 +72,17 @@ export const ShopSubCard = <C extends React.ElementType = "p">({
     getProductType(product);
 
   return (
-    <Component {...props} className={classes}>
+    <Component
+      style={{
+        height: isMobile ? 150 : 200,
+        width: "80%",
+        minWidth: 400,
+        maxWidth: 700,
+        textAlign: isMobile ? "left" : "center",
+      }}
+      {...props}
+      className={classes}
+    >
       <Card
         borderColor={"linear-gradient(to bottom, #4264a9 0%, #386786 100%)"}
         backgroundColor={backgroundColor}
