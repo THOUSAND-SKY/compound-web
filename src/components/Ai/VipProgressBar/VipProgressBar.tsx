@@ -18,7 +18,7 @@ export const VipProgressBar = <C extends React.ElementType = "p">({
 }: PropsWithChildren<VipProgressBarProps<C>>) => {
   const Component = as || "div";
   const classes = classnames("ai_Box", className);
-  const [progress] = useState(50);
+  const [progress] = useState(5);
   const [maxProgress] = useState(100);
   const progressBarRef = React.useRef<HTMLDivElement>(null);
   const [progressBarHeight, setProgressBarHeight] = useState(0);
@@ -36,6 +36,8 @@ export const VipProgressBar = <C extends React.ElementType = "p">({
         progressAdjusted = progress;
       }
       const width =
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         (progressAdjusted / maxProgress) * parseInt(progressBarWidth);
 
       document.documentElement.style.setProperty(
