@@ -1,4 +1,4 @@
-.card-child-content {
+.cardChildContent {
   padding: 10px;
   margin-inline: auto;
   block-size: 100%;
@@ -10,7 +10,7 @@
   object-fit: cover;
 }
 
-.card-footer {
+.cardFooter {
   display: flex;
   justify-content: center;
   background: #181e2a;
@@ -21,20 +21,20 @@
   font-weight: bold;
 }
 
-.deal-image {
+.dealImage {
   margin-block-start: 20px;
   block-size: 80px;
   margin: auto;
 }
 
-.deal-quantity {
+.dealQuantity {
   margin-block: 40px 0;
   font-size: 40px;
   font-weight: bold;
   color: white;
 }
 
-.deal-desc {
+.dealDesc {
   margin-block-start: 0;
   font-size: 20px;
   font-weight: bold;

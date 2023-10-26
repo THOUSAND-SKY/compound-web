@@ -1,7 +1,7 @@
 import classnames from "classnames";
-import React, { PropsWithChildren, useEffect, useRef, useState } from "react";
+import React, { PropsWithChildren, useState } from "react";
 import "./ShopSubCard.css";
-import { Card } from "../Card/Card";
+import { BorderCard } from "../BorderCard/BorderCard";
 import { Button } from "../../Button/Button";
 
 export enum Product {
@@ -83,12 +83,12 @@ export const ShopSubCard = <C extends React.ElementType = "p">({
       {...props}
       className={classes}
     >
-      <Card
+      <BorderCard
         borderColor={"linear-gradient(to bottom, #4264a9 0%, #386786 100%)"}
         backgroundColor={backgroundColor}
       >
-        <img className={"sub-image"} src={img}></img>
-        <div className={"card-child-content"}>
+        <img className={"subImage"} src={img}></img>
+        <div className={"cardChildContent"}>
           <span
             style={{
               display: "flex",
@@ -96,7 +96,7 @@ export const ShopSubCard = <C extends React.ElementType = "p">({
               textAlign: "center",
             }}
           >
-            <p className={"sub-title"}>SENTIENT AI</p>
+            <p className={"subTitle"}>SENTIENT AI</p>
             <div
               className={"tag"}
               style={{
@@ -109,7 +109,7 @@ export const ShopSubCard = <C extends React.ElementType = "p">({
             </div>
           </span>
 
-          <p className={"sub-desc"}>
+          <p className={"subDesc"}>
             Choose your own sentient AI&apos;s and more!
           </p>
           <Button
@@ -133,7 +133,7 @@ export const ShopSubCard = <C extends React.ElementType = "p">({
             VIEW BENEFITS
           </Button>
         </div>
-      </Card>
+      </BorderCard>
     </Component>
   );
 };

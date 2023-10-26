@@ -1,7 +1,7 @@
 import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 
-import { Card as CardComponent } from "./Card";
+import { BorderCard as CardComponent } from "./BorderCard";
 
 export default {
   title: "Card",

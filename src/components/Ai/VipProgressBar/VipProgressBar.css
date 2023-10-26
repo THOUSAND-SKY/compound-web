@@ -3,7 +3,7 @@
 }
 
 
-.vip-image {
+.vipImage {
   block-size: 50px;
   z-index: 3;
   height: 60px;
@@ -14,9 +14,8 @@
   transform: translate(-30%, 10%);
 }
 
-.vip-progress-text {
+.vipProgressText {
   margin: auto;
-  padding: 5px;
   vertical-align: middle;
   font-size: 17px;
   z-index: 3;
@@ -24,7 +23,7 @@
   color: white;
 }
 
-.vip-progress-fill {
+.vipProgressFill {
   position: fixed;
   margin-top: 0.5px;
   height: 32px;

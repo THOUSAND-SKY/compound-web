@@ -14,15 +14,14 @@ const Template: StoryFn<typeof VipProgressBarComponent> = (args) => (
   <div style={{ display: "flex", gap: 8 }}>
     <VipProgressBarComponent {...args}></VipProgressBarComponent>
 
-    <VipProgressBarComponent {...args}></VipProgressBarComponent>
+    {/*<VipProgressBarComponent {...args}></VipProgressBarComponent>*/}
   </div>
 );
 
 export const VipProgressBarYeet = Template.bind({});
 VipProgressBarYeet.args = {
   style: {
-    width: "450px",
-    height: "40px",
+    width: "850px",
+    height: "30px",
   },
-  progressBarWidth: "450px",
 };

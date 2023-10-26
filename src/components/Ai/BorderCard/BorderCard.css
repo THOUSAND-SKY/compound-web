@@ -4,9 +4,9 @@
   --card-background-color: linear-gradient(to bottom, #22262f 0%, #293449 100%);
 }
 
-.ai-box, .ai-box *,
-.ai-box *::after,
-.ai-box *::before {
+.ai_Box, .ai_Box *,
+.ai_Box *::after,
+.ai_Box *::before {
   box-sizing: border-box;
 
 }
@@ -19,13 +19,13 @@
   height: inherit;
 }
 
-.card-border {
+.cardBorder {
   padding: 3px;
   border-radius: var(--ai-card-radius, 2rem);
   background: var(--card-border-color);
 }
 
-.card-content {
+.ai_cardContent {
   overflow: hidden;
   margin: 0;
   display: flex;

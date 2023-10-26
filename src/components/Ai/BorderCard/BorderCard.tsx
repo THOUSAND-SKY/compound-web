@@ -1,5 +1,5 @@
 import classnames from "classnames";
-import "./Card.css";
+import "./BorderCard.css";
 import React, { PropsWithChildren, useEffect, useRef } from "react";
 
 type CardProps<C extends React.ElementType> = {
@@ -8,7 +8,7 @@ type CardProps<C extends React.ElementType> = {
   borderColor?: string;
 } & React.ComponentPropsWithoutRef<C>;
 
-export const Card = <C extends React.ElementType = "p">({
+export const BorderCard = <C extends React.ElementType = "p">({
   as,
   className,
   children,
@@ -20,7 +20,7 @@ export const Card = <C extends React.ElementType = "p">({
 >) => {
   // add borderColor to the type
   const Component = as || "div";
-  const classes = classnames("ai_Box", "card-border", "card", className);
+  const classes = classnames("ai_Box", "cardBorder", "card", className);
 
   const ref = useRef(null);
 
@@ -41,7 +41,7 @@ export const Card = <C extends React.ElementType = "p">({
 
   return (
     <Component {...props} className={classes} ref={ref}>
-      <div className={"card-content"}>{children}</div>
+      <div className={"ai_cardContent"}>{children}</div>
     </Component>
   );
 };

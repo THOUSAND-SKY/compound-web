@@ -1,7 +1,7 @@
 import classnames from "classnames";
 import React, { PropsWithChildren, useEffect, useState } from "react";
 import "./VipProgressBar.css";
-import { Card } from "../Card/Card";
+import { BorderCard } from "../BorderCard/BorderCard";
 
 type VipProgressBarProps<C extends React.ElementType> = {
   as?: C;
@@ -14,41 +14,52 @@ type VipProgressBarProps<C extends React.ElementType> = {
 export const VipProgressBar = <C extends React.ElementType = "p">({
   as,
   className,
-  progressBarWidth,
   ...props
 }: PropsWithChildren<VipProgressBarProps<C>>) => {
   const Component = as || "div";
   const classes = classnames("ai_Box", className);
   const [progress] = useState(50);
   const [maxProgress] = useState(100);
+  const progressBarRef = React.useRef<HTMLDivElement>(null);
+  const [progressBarHeight, setProgressBarHeight] = useState(0);
 
   useEffect(() => {
-    if (progressBarWidth != null) {
+    if (progressBarRef.current) {
+      const progressBarWidth = progressBarRef.current.offsetWidth;
+      setProgressBarHeight(progressBarRef.current.offsetHeight - 8);
+
       document.documentElement.style.setProperty(
         "--progress-fill-width",
-        `${(progress / maxProgress) * parseInt(progressBarWidth)}px`,
+        `${(progress / maxProgress) * progressBarWidth}px`,
       );
     }
   }, [progress]);
 
   return (
-    <div style={{ marginLeft: 20 }}>
+    <div style={{ marginLeft: 20 }} ref={progressBarRef}>
       <Component {...props} className={classes}>
         <img
-          className={"vip-image"}
+          className={"vipImage"}
           src="https://s3.eu-central-1.amazonaws.com/cos-dev-attachments/ShareX/notsimon/1023/OZbQjqVKnJKsWVDt.png"
+          style={{
+            height: `${progressBarHeight + 28}px`,
+            width: `${progressBarHeight + 28}px`,
+          }}
         ></img>
-        <Card
+        <BorderCard
           borderColor={"#9e8e63"}
           backgroundColor={
             "linear-gradient(to bottom, #251a1f 0%, #3f1f25 100%)"
           }
         >
-          <div className={"vip-progress-fill"}></div>
-          <p className={"vip-progress-text"}>
+          <div
+            className={"vipProgressFill"}
+            style={{ height: `${progressBarHeight}px` }}
+          ></div>
+          <p className={"vipProgressText"}>
             {progress}/{maxProgress}
           </p>
-        </Card>
+        </BorderCard>
       </Component>
     </div>
   );
