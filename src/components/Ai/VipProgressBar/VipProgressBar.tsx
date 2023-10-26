@@ -6,19 +6,18 @@ import { BorderCard } from "../BorderCard/BorderCard";
 type VipProgressBarProps<C extends React.ElementType> = {
   as?: C;
   className?: string;
-  borderColor?: string;
-  backgroundColor?: string;
-  progressBarWidth?: string;
+  progressCount: number;
 } & React.ComponentPropsWithoutRef<C>;
 
 export const VipProgressBar = <C extends React.ElementType = "p">({
   as,
   className,
+  progressCount,
   ...props
 }: PropsWithChildren<VipProgressBarProps<C>>) => {
   const Component = as || "div";
   const classes = classnames("ai_Box", className);
-  const [progress] = useState(5);
+  const [progress] = useState(progressCount);
   const [maxProgress] = useState(100);
   const progressBarRef = React.useRef<HTMLDivElement>(null);
   const [progressBarHeight, setProgressBarHeight] = useState(0);

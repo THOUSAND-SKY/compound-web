@@ -24,4 +24,5 @@ VipProgressBarYeet.args = {
     width: "850px",
     height: "30px",
   },
+  progressCount: 50,
 };
