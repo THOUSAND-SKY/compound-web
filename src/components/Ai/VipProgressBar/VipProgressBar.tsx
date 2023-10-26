@@ -27,10 +27,20 @@ export const VipProgressBar = <C extends React.ElementType = "p">({
     if (progressBarRef.current) {
       const progressBarWidth = progressBarRef.current.offsetWidth;
       setProgressBarHeight(progressBarRef.current.offsetHeight - 8);
+      let progressAdjusted;
+      if (progress < 5) {
+        progressAdjusted = 5;
+      } else if (progress > 98) {
+        progressAdjusted = 99;
+      } else {
+        progressAdjusted = progress;
+      }
+      const width =
+        (progressAdjusted / maxProgress) * parseInt(progressBarWidth);
 
       document.documentElement.style.setProperty(
         "--progress-fill-width",
-        `${(progress / maxProgress) * progressBarWidth}px`,
+        `${width}px`,
       );
     }
   }, [progress]);
