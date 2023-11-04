@@ -1,0 +1,100 @@
+.ai_Box, .ai_Box *,
+.ai_Box *::after,
+.ai_Box *::before {
+  box-sizing: border-box;
+
+}
+.card figure img {
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.tag {
+  background: linear-gradient(#e6d225, #c89b24);
+  padding: 0 0.4rem;
+  transform: skew(-20deg);
+  border-radius: 5px;
+
+  display: inline-block;
+  margin-left: 4rem;
+  height: 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: auto 0;
+}
+
+.cardBorderMobile {
+  padding: 3px;
+  border-radius: 1rem;
+  background: linear-gradient(to bottom, #4264a9 0%, #386786 100%);
+}
+
+.ai_cardContentMobile {
+  overflow: hidden;
+  margin: 0;
+  display: flex;
+  align-self: flex-end;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  border-radius: calc(1rem*0.9);
+  block-size: 100%;
+  inline-size: 100%;
+  background: var(--card-background-color);
+  grid-column-start: 1;
+  grid-row-start: 1;
+  gap: 0.5rem;
+  box-sizing: border-box;
+}
+
+.cardChildContentMobile {
+  padding: 10px;
+  text-align: start;
+  z-index: 3;
+  align-content: end;
+  display: grid
+}
+
+.fog {
+  position: absolute;
+  height: 100%;
+  z-index: 3;
+  width: 100%;
+  background-size: 100% 100%;
+  background-position: 0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px;
+  opacity: 0.6;
+}
+
+.subImageMobile {
+  margin-block-start: 20px;
+  block-size: 12rem;
+  z-index: 2;
+  position: absolute;
+  inset-inline-start: 55%;
+  inset-block-start: -20%;
+}
+
+.subTitleMobile {
+  margin: 0 10px 0 0;
+  padding: 0;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+.subDescMobile {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  color: grey;
+}
+
+.cardMobile {
+  position: relative;
+  background-color: #242936;
+  padding: 20px;
+}
+
+

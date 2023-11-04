@@ -1,8 +1,10 @@
 .indicators {
     display: flex;
     justify-content: center;
-    margin-top:250px;
     z-index: 4;
+    position: absolute;
+    bottom: 2rem;
+    right: 1rem;
 }
 
 .dot {
@@ -30,10 +32,8 @@
 
 .carouselComponent.active {
     opacity: 1;
-    /*transform: translateX(0);*/
 }
 
 .carouselComponent.inactive {
     opacity: 0;
-    /*transform: translateX(-100%);*/
 }

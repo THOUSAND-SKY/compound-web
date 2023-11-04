@@ -19,8 +19,7 @@ const Template: StoryFn<typeof CarouselComponent> = (args) => (
 export const CarouselYeet = Template.bind({});
 CarouselYeet.args = {
   style: {
-    width: "450px",
-    height: "40px",
+    width: "100%",
+    height: "170px",
   },
-  progressBarWidth: "450px",
 };

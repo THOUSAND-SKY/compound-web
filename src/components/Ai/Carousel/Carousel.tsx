@@ -1,6 +1,7 @@
 import "./Carousel.css";
 import React, { useReducer, useEffect, useState, useRef } from "react";
 import { ShopSubCard, Product } from "../ShopSubCard/ShopSubCard";
+import { ShopSubCardMobile } from "../ShopSubCardMobile/ShopSubCardMobile";
 
 function next(length: number, active: number) {
   return (active + 1) % length;
@@ -72,13 +73,18 @@ export const Carousel: React.FC = () => {
   };
 
   const handleTouchEnd = () => {
-    setupTimer(); // Call the setupTimer function
-    if (touchEnd < touchStart) {
-      dispatch({ type: "next", length: Object.keys(Product).length });
-    }
+    const MIN_SWIPE_DISTANCE = 80; // Set a minimum distance for a swipe
 
-    if (touchEnd > touchStart) {
-      dispatch({ type: "prev", length: Object.keys(Product).length });
+    // Check if the touch event was a swipe
+    if (touchEnd > 0 && Math.abs(touchEnd - touchStart) > MIN_SWIPE_DISTANCE) {
+      setupTimer(); // Call the setupTimer function
+      if (touchEnd < touchStart) {
+        dispatch({ type: "next", length: Object.keys(Product).length });
+      }
+
+      if (touchEnd > touchStart) {
+        dispatch({ type: "prev", length: Object.keys(Product).length });
+      }
     }
 
     // Reset touch positions
@@ -94,28 +100,29 @@ export const Carousel: React.FC = () => {
           className={`carouselComponent ${
             state.active === index ? "active" : "inactive"
           }`}
+          style={{ width: "90%", margin: "auto", maxWidth: 550 }}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          <ShopSubCard isMobile={true} product={product} />
+          <ShopSubCardMobile product={product} />
+          <div className="indicators">
+            {Object.values(Product).map((_, index) => (
+              <div
+                key={index}
+                className={`dot ${state.active === index ? "" : "active"}`}
+                onClick={() => {
+                  if (timerRef.current) {
+                    clearInterval(timerRef.current);
+                  }
+                  setupTimer(); // Call the setupTimer function
+                  dispatch({ type: "jump", desired: index });
+                }}
+              ></div>
+            ))}
+          </div>
         </div>
       ))}
-      <div className="indicators">
-        {Object.values(Product).map((_, index) => (
-          <div
-            key={index}
-            className={`dot ${state.active === index ? "active" : ""}`}
-            onClick={() => {
-              if (timerRef.current) {
-                clearInterval(timerRef.current);
-              }
-              setupTimer(); // Call the setupTimer function
-              dispatch({ type: "jump", desired: index });
-            }}
-          ></div>
-        ))}
-      </div>
     </div>
   );
 };

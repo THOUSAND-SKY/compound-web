@@ -34,10 +34,7 @@ export const VipProgressBar = <C extends React.ElementType = "p">({
       } else {
         progressAdjusted = progress;
       }
-      const width =
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        (progressAdjusted / maxProgress) * parseInt(progressBarWidth);
+      const width = (progressAdjusted / maxProgress) * progressBarWidth;
 
       document.documentElement.style.setProperty(
         "--progress-fill-width",
@@ -49,14 +46,17 @@ export const VipProgressBar = <C extends React.ElementType = "p">({
   return (
     <div style={{ marginLeft: 20 }} ref={progressBarRef}>
       <Component {...props} className={classes}>
-        <img
-          className={"vipImage"}
-          src="https://s3.eu-central-1.amazonaws.com/cos-dev-attachments/ShareX/notsimon/1023/OZbQjqVKnJKsWVDt.png"
-          style={{
-            height: `${progressBarHeight + 28}px`,
-            width: `${progressBarHeight + 28}px`,
-          }}
-        ></img>
+        <div style={{ position: "relative" }}>
+          <img
+            className={"vipImage"}
+            src="https://s3.eu-central-1.amazonaws.com/cos-dev-attachments/ShareX/notsimon/1023/OZbQjqVKnJKsWVDt.png"
+            style={{
+              height: `${progressBarHeight + 28}px`,
+              width: `${progressBarHeight + 28}px`,
+            }}
+          ></img>
+        </div>
+
         <BorderCard
           borderColor={"#9e8e63"}
           backgroundColor={
